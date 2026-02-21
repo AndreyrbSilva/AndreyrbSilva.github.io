@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrey | Portfólio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <header id="header">
+        <nav class="container">
+            <div class="logo">Andrey<span> Portfólio</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content container">
+                
+                <div class="hero-image">
+                    <div class="circle-gradient">
+                        <img src="assets/img/mascote.png" alt="Avatar de Andrey Silva">
+                    </div>
+                </div>
+
+                <div class="hero-text">
+                    <p class="greeting">Olá, eu me chamo</p>
+                    <h1>Andrey <span>:)</span></h1>
+                    <p class="subtitle">
+                        <strong>Estudante de ADS</strong> | Desenvolvedor Full-Stack em Formação
+                    </p>
+                    
+                    <div class="actions">
+                        <a href="#" class="btn-cv" download>Download CV</a>
+                        <a href="#contato" class="btn-contact" id="openContact">Entrar em contato</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <aside class="modal-overlay" id="contactModal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-labelledby="modalTitle">
+            <button class="close-modal" aria-label="Fechar modal">&times;</button>
+            
+            <h3 id="modalTitle">Conecte-se comigo</h3>
+            <p>Escolha o seu canal de preferência:</p>
+
+            <div class="contact-grid">
+                <a href="mailto:andreyrdh@gmail.com" class="contact-item">
+                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                    <span>Gmail</span>
+                </a>
+                <a href="https://wa.me/5581983066269?text=Olá%20Andrey" target="_blank" rel="noopener" class="contact-item">
+                    <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://www.linkedin.com/in/andrey-silva-aa448b2b7" target="_blank" rel="noopener" class="contact-item">
+                    <div class="icon-box"><i class="fab fa-linkedin-in"></i></div>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/dreeodev/" target="_blank" rel="noopener" class="contact-item">
+                    <div class="icon-box"><i class="fab fa-instagram"></i></div>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
