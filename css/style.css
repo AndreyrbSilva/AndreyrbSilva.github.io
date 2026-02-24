@@ -1,4 +1,8 @@
 /* --- CONFIGURAÇÕES E VARIÁVEIS --- */
+html{
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary: #ff1616;
     --primary-hover: #ff0a0a;
@@ -41,6 +45,7 @@ header {
     padding: 25px 8%;
     z-index: 1000;
     transition: all 0.5s;
+    border-bottom: 1px solid transparent;
 }
 
 header.sticky {
@@ -201,6 +206,95 @@ nav {
     background: rgba(243, 53, 53, 0.1);
 }
 
+/* --- SEÇÃO: SOBRE --- */
+
+.about-section{
+    padding: 80px 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 100%);
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.about-section h1{
+    color: var(--text-white);
+    padding-bottom: 1%;
+    padding-top: 7%;
+}
+
+.about-section p{
+    color: var(--text-gray);
+}
+
+/* --- SEÇÃO: SKILLS --- */
+
+.skill-section{
+    background-color: #000000;
+    text-align: center;
+}
+
+.skill-section h1{
+    padding-top: 8%;
+}
+
+.skills-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 180px));
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.skill-card{
+    background-color: #0e0e0e;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border-bottom: 4px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.4s ease;
+}
+
+.skill-card i{
+    font-size: 3em;
+    color: var(--text-gray)
+}
+
+.skill-card span{
+    color: var(--text-gray);
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.skill-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(255, 62, 62, 0.2);
+}
+
+.skill-card:hover i{
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+/* --- SEÇÃO: PROJETOS --- */
+
+.projects-section{
+    background-color: #000000;
+    padding-top: 110px;
+}
+
+.projects-section h1{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.projects-section h2{
+    padding: 30px 20px;
+}
+
 /* --- COMPONENTE: MODAL --- */
 .modal-overlay {
     position: fixed;
@@ -289,6 +383,17 @@ nav {
     margin-bottom: 8px;
 }
 
+.hidden{
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease;
+}
+
+.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* TABLET (até 768px) */
 @media (max-width: 768px) {
     header {
@@ -374,3 +479,4 @@ nav {
         grid-template-columns: 1fr; 
     }
 }
+

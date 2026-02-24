@@ -18,6 +18,20 @@ function initHeader() {
     });
 }
 
+/* --- SEÇÃO: ANIMAÇÃO DE SCROLL --- */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show'); 
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
 /* --- SEÇÃO: PARTICLES.JS --- */
 function initParticles() {
     if (typeof particlesJS !== "undefined") {
@@ -110,10 +124,10 @@ function initContactModal() {
         if (e.target === modal) toggleModal(false);
     });
 
-    // Fechar com a tecla ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
             toggleModal(false);
         }
     });
 }
+
