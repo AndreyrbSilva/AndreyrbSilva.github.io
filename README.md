@@ -1,11 +1,8 @@
 <h1 align="center">Meu Portfólio Pessoal</h1>
 
 <p align="center">
-  <a href="#status-do-projeto">Status</a> •
   <a href="#sobre-o-projeto">Sobre</a> •
-  <a href="#tecnologias">Tecnologias</a> •
-  <a href="#features-em-destaque">Features</a> •
-  <a href="#como-rodar-localmente">Como Rodar</a>
+  <a href="#features-em-destaque">Features</a>
 </p>
 
 <p align="center">
@@ -17,47 +14,29 @@
 <br>
 
 <p align="center">
-  <img width="1362" height="764" alt="image" src="https://github.com/user-attachments/assets/da5de5c6-1495-458e-934e-db384443419b" />
+  <img src="https://github.com/user-attachments/assets/da5de5c6-1495-458e-934e-db384443419b" alt="Preview da Home">
 </p>
 
-## Status do Projeto: Em Desenvolvimento
+## Status do Portfolio
 
-**Aviso:** Este portfólio está atualmente em fase de construção. A estrutura base, o design e as seções iniciais (Home, Sobre Mim e Hard Skills) já estão prontas e animadas. No entanto, as seções de **Projetos** e **Contatos** ainda serão preenchidas e finalizadas com meus trabalhos reais e informações definitivas em breve.
+O portfólio atingiu sua primeira versão completa. Toda a estrutura de design responsivo, animações de entrada e a lógica de modais dinâmicos estão prontas. Este projeto será atualizado continuamente à medida que novos desafios e projetos forem concluídos.
 
 ## Sobre o Projeto
 
-Este é o meu portfólio pessoal, desenvolvido do zero para apresentar minha evolução como estudante de Análise e Desenvolvimento de Sistemas e Desenvolvedor Full-Stack em formação. 
+Este projeto é a minha vitrine principal como estudante de **Programação**. Desenvolvi esta plataforma para centralizar meus projetos que vão desde aplicações pessoais e acadêmicas até soluções de automação para comércio local. 
 
-O objetivo desta página é servir como vitrine principal para os meus trabalhos, centralizando projetos desenvolvidos para clientes reais (como landing pages) e aplicações web/mobile (como sistemas de gestão e dashboards). É o meu "cartão de visitas" focado em oportunidades de estágio na área de TI e captação de projetos freelance.
+O objetivo é demonstrar competência técnica em **Front-end** e **Back-end**, servindo como meu cartão de visitas para oportunidades de estágio e projetos freelance.
 
-## Tecnologias
+## Features em Destaque
 
-A base deste projeto foi construída utilizando os fundamentos da web, garantindo alta performance e controle total sobre a interface sem a necessidade de frameworks pesados:
-
-- **HTML5** (Semântico e acessível)
-- **CSS3** (Animações, Grid Layout, Flexbox e customização de Scrollbar)
-- **JavaScript Vanilla** (Lógica de interações e manipulação da DOM)
-- **Particles.js** (Biblioteca leve para o fundo interativo)
+- **Gerenciamento Dinâmico de Modais:** Implementei um sistema em **JavaScript** que consome um objeto central de dados para popular os modais de projeto. Isso permite que fotos, vídeos de demonstração e links mudem instantaneamente sem recarregar a página.
+- **Arquitetura Mobile-First:** O portfólio foi desenhado para ser perfeitamente utilizável em qualquer dispositivo, com botões de contato otimizados para o toque no celular.
+- **UI/UX Personalizada:** Inclui uma **Scrollbar customizada** em CSS para manter a identidade visual *dark/red* em todos os navegadores, além de animações suaves de entrada (Intersection Observer).
+- **Download de Currículo:** Integração direta para download do CV em PDF.
 
 <br>
 
 <p align="center">
-  <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/aeed5d3b-377e-4ca5-b17f-74d87ff69b1c" />
+  <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/bc275abf-cc2f-4b8e-8051-cf782ac09d98" />
+
 </p>
-
-## Features em Destaque
-
-Durante o desenvolvimento, foquei em aplicar boas práticas de UI/UX e arquitetura front-end:
-
-- **Intersection Observer API:** Animações de entrada (fade-in e slide-up) acionadas via scroll nativo do JavaScript, poupando processamento e evitando os gargalos do evento clássico de scroll.
-- **Layout 100% Responsivo:** Construção de grades automáticas usando CSS Grid (auto-fit e minmax), garantindo que os cards se adaptem a qualquer tamanho de tela sem quebrar.
-- **Transições Suaves:** Uso de gradientes CSS avançados (linear-gradient com RGBA) para mesclar seções de fundo sólido com o canvas animado de partículas.
-- **Navegação Inteligente:** Smooth scrolling nativo acoplado a um header fixo (sticky) que reage à rolagem da página de forma fluida.
-
-## Como Rodar Localmente
-
-Como o projeto é puramente estático (Client-side), rodá-lo na sua máquina é extremamente simples:
-
-1. Faça o clone deste repositório:
-```bash
-git clone [https://github.com/AndreyrbSilva/nome-do-seu-repositorio.git](https://github.com/AndreyrbSilva/nome-do-seu-repositorio.git)
