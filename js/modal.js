@@ -66,9 +66,9 @@ const myProjects = {
 
     "dogao_leo": {
         title: 'Dogão do Léo - O Gigante do Ibura',
-        date: 'Janeiro de 2026',
+        date: '25 de Janeiro de 2026',
         shortDescription: 'Landing page para lanchonete local com sistema inteligente de avaliações, que utiliza Google Sheets e Apps Script para filtrar e exibir depoimentos em tempo real.',
-        description: 'Desenvolvida para transformar a presença digital do <strong>Dogão do Léo</strong>, esta landing page vai além de um simples menu, atuando como uma plataforma de conversão e prova social otimizada para redes móveis 3G/4G.<br><br>O grande diferencial do projeto é o <strong>Sistema de Avaliações Inteligente</strong>. Utilizando Google Forms e Google Sheets como banco de dados, criei uma API com Google Apps Script que filtra automaticamente palavras ofensivas (via Regex) e exibe no site os comentários construtivos em tempo real, independentemente da nota.<br><br>👉 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjODL4ruV00S77tL1GhBkaMF5zy8GjaNCgBHzhlUVlHhj-PQ/viewform" target="_blank" style="color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">Clique aqui para testar o formulário ao vivo</a> e veja sua avaliação aparecer no mural do site!<br><br><strong>Principais Funcionalidades:</strong><br>• Interface Mobile First com animações de interseção.<br>• Curadoria e filtro de segurança automáticos para depoimentos (Regex).<br>• Integração nativa de front-end (Fetch API) com planilhas do Google.',
+        description: 'Desenvolvida para transformar a presença digital do <strong>Dogão do Léo</strong>, esta landing page vai além de um simples menu, atuando como uma plataforma para exibir seus produtos.<br><br>O grande diferencial do projeto é o <strong>Sistema de Avaliações Inteligente</strong>. Utilizando Google Forms e Google Sheets como banco de dados, criei uma API com Google Apps Script que filtra automaticamente palavras ofensivas (via Regex) e exibe no site os comentários construtivos em tempo real, independentemente da nota.<br><br>👉 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjODL4ruV00S77tL1GhBkaMF5zy8GjaNCgBHzhlUVlHhj-PQ/viewform" target="_blank" style="color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">Clique aqui para testar o formulário ao vivo</a> e veja sua avaliação aparecer no mural do site!<br><br><strong>Principais Funcionalidades:</strong><br>• Interface Mobile First com animações de interseção.<br>• Curadoria e filtro de segurança automáticos para depoimentos (Regex).<br>• Integração nativa de front-end (Fetch API) com planilhas do Google.',
         videoSrc: 'https://streamable.com/e/z40chj?', 
         technologies: [
             { icon: 'fa-brands fa-html5', title: 'HTML5' },
@@ -84,6 +84,25 @@ const myProjects = {
         trello: '',
         miro: ''
     },
+
+    "lumiere_estetica": {
+        title: 'Landing Page - Lumière Estética',
+        date: '30 de Março de 2026',
+        shortDescription: 'Landing page para clínica de estética com design sofisticado, animações de scroll, contador de estatísticas animado e integração com Google Maps.',
+        description: 'Projeto de portfólio para o nicho de estética, construído com HTML, CSS e JavaScript puro, sem frameworks.<br><br>A identidade visual foi pensada do zero com paleta exclusiva, tipografia elegante e micro-interações que transmitem sofisticação.<br><br><strong>Principais Funcionalidades:</strong><br>• Animações de entrada via Intersection Observer.<br>• Cursor personalizado com efeito de expansão.<br>• Contador de estatísticas animado por scroll.<br>• Google Maps integrado na seção de localização.',
+        videoSrc: 'https://streamable.com/e/y60d2x?',
+        technologies: [
+            { icon: 'fa-brands fa-html5', title: 'HTML5' },
+            { icon: 'fa-brands fa-css3-alt', title: 'CSS3' },
+            { icon: 'fa-brands fa-js', title: 'JavaScript (ES6+)' }
+        ],
+        site: 'https://andreyrbsilva.github.io/lumiere-estetica/', 
+        repository: 'https://github.com/AndreyrbSilva/lumiere-estetica',
+        figma: '',
+        notion: '',
+        trello: '',
+        miro: ''
+    }
 };
 
 // LÓGICA DO MODAL DE PROJETOS
