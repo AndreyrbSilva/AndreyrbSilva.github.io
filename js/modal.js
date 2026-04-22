@@ -102,6 +102,26 @@ const myProjects = {
         notion: '',
         trello: '',
         miro: ''
+    },
+
+    "mypokedex": {
+        title: 'MyPokedex - Pokedex Interativa',
+        date: '19 de Abril de 2026',
+        shortDescription: 'Pokedex interativa que consome a PokéAPI para exibir informações detalhadas de cada Pokémon, com sistema de favoritos e design responsivo.',
+        description: 'Desenvolvida como um projeto pessoal para explorar consumo de APIs e interatividade, a <strong>MyPokedex</strong> é uma aplicação web que utiliza a PokéAPI para buscar e exibir dados completos sobre os Pokémon.<br><br>O usuário pode navegar por uma lista paginada, visualizar detalhes como tipos, habilidades e estatísticas, e marcar seus Pokémon favoritos, que são armazenados localmente no navegador.<br><br><strong>Principais Funcionalidades:</strong><br>• Busca e exibição detalhada de Pokémon via PokéAPI.<br>• Sistema de favoritos com persistência local.<br>',
+        videoSrc: 'https://streamable.com/e/jdezhb?',
+        technologies: [
+            { icon: 'fa-brands fa-react', title: 'React' },
+            { icon: 'fa-solid fa-bolt', title: 'Vite' },
+            { icon: 'fa-solid fa-wind', title: 'Tailwind CSS' },
+            { icon: 'fa-brands fa-figma', title: 'Design no Figma' }
+        ],
+        site: 'https://mypokedex-rct.vercel.app/',
+        repository: 'https://github.com/AndreyrbSilva/Pokedex-React',
+        figma: '',
+        notion: '',
+        trello: '',
+        miro: ''
     }
 };
 
