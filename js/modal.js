@@ -1,6 +1,28 @@
 // DADOS DOS PROJETOS
 
 const myProjects = {
+    "descartecerto": {
+        title: 'DescarteCerto - Reciclagem Gamificada',
+        date: 'Junho / 2026',
+        shortDescription: 'Aplicativo mobile com scanner de IA, gamificação (streak, ranking) e painéis exclusivos para professores e admin.',
+        description: 'O <strong>DescarteCerto</strong> é um aplicativo mobile que transforma a reciclagem em um jogo competitivo e educativo para o ambiente escolar (Projeto Integrador - SENAC).<br><br>O aluno aponta a câmera para um resíduo, a inteligência artificial (MobileNet) identifica a categoria (plástico, papel, metal, orgânico ou vidro) e recompensa com pontos. A plataforma evoluiu para contar com perfis dinâmicos customizáveis, notificações push em tempo real para ranking e módulos exclusivos de gestão para Professores e Administradores.<br><br><strong>Principais Funcionalidades:</strong><br>• Scanner de resíduos por IA.<br>• Gamificação: Pontos, Streak, Troféus e Missões diárias.<br>• Módulo Professor: Avaliação de turmas, Pódio e TeacherStatsBar.<br>• Painel Administrativo com dashboard completo.<br>• Segurança: JWT, bcrypt, AES, 2FA e Rate Limiting.',
+        videoSrc: 'https://streamable.com/e/ld965t',
+        technologies: [
+            { icon: 'fa-brands fa-react', title: 'React Native + Expo SDK 54' },
+            { icon: 'fa-brands fa-node-js', title: 'Node.js + Fastify 5' },
+            { icon: 'fa-solid fa-database', title: 'Prisma 7 + PostgreSQL (Supabase)' },
+            { icon: 'fa-brands fa-python', title: 'Python + FastAPI (AI)' },
+            { icon: 'fa-solid fa-leaf', title: 'Zustand + React Query' },
+            { icon: 'fa-brands fa-github', title: 'Vitest + CI/CD (GitHub Actions)' }
+        ],
+        site: 'https://expo.dev/artifacts/eas/eFpZo6LH3Nk8DU1UbFngWt.apk', 
+        repository: 'https://github.com/AndreyrbSilva/Descarte-Certo',
+        figma: 'https://www.figma.com/design/BFCU5zRmcbjUzBN9iBxXdG/Descarte-Certo?node-id=0-1&t=YgRpyujrJZyj6L6y-1',
+        notion: '',
+        trello: 'https://trello.com/invite/b/6a1387183d9db992d4570eb0/ATTI897625145d586b5ad8dfec434397c7d2AA5490EA/descartecerto-pi',
+        miro: ''
+    },
+
     "pontoplus": {
         title: 'PontoPlus - Parada Inteligente',
         date: '9 de Dezembro de 2025',
@@ -209,6 +231,16 @@ function initProjectModal() {
         if (link && link !== '#') {
             element.classList.remove('hidden-element');
             element.href = link;
+            
+            // Tratamento especial para o botão de "site" virar "Instalar App" se for um APK
+            if (element.id === 'link-site') {
+                if (link.includes('.apk')) {
+                    element.innerHTML = '<i class="fa-brands fa-android"></i> Instalar App';
+                } else {
+                    element.innerHTML = '<i class="fas fa-external-link-alt"></i> Acessar projeto';
+                }
+            }
+            
         } else {
             element.classList.add('hidden-element');
         }

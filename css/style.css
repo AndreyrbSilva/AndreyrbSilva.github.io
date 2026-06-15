@@ -307,6 +307,194 @@ nav {
     transition: all 0.3s ease;
 }
 
+/* --- SEÇÃO: TIMELINE --- */
+.timeline-section {
+    background-color: #000000;
+    padding: 80px 0 40px;
+}
+
+.timeline-section h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.timeline-section .titulo-destaque {
+    display: table;
+    margin: 0 auto 40px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding: 20px 0;
+}
+
+/* Linha central - agora é um div real para gradiente dinâmico via JS */
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+    border-radius: 2px;
+    z-index: 0;
+    transition: background 0.6s ease;
+}
+
+.timeline-item {
+    --item-color-1: var(--primary);
+    --item-color-2: var(--primary);
+    --item-glow: rgba(255, 22, 22, 0.3);
+    position: relative;
+    width: 50%;
+    padding: 0 40px 50px;
+    z-index: 1;
+}
+
+/* Compensar o .timeline-line ser o primeiro filho (child 1) */
+/* Primeiro timeline-item = child(2) = even → fica na esquerda */
+/* Segundo timeline-item = child(3) = odd → fica na direita */
+.timeline-item:nth-child(even) {
+    left: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 50%;
+}
+
+/* Dot com cor dinâmica da empresa */
+.timeline-dot {
+    position: absolute;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--item-color-1), var(--item-color-2));
+    animation: pulse-dot-dynamic 2.5s ease-in-out infinite;
+    z-index: 2;
+    transition: background 0.4s ease;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    right: -8px;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    left: -8px;
+}
+
+@keyframes pulse-dot-dynamic {
+    0%, 100% { box-shadow: 0 0 0 4px var(--bg-dark), 0 0 10px var(--item-glow); }
+    50% { box-shadow: 0 0 0 4px var(--bg-dark), 0 0 25px var(--item-glow), 0 0 40px var(--item-glow); }
+}
+
+/* Card com borda gradiente da empresa via pseudo-element */
+.timeline-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 25px 30px;
+    text-align: left;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logos no canto superior direito do card */
+.timeline-logo {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+    z-index: 2;
+    opacity: 0.7;
+    filter: grayscale(30%);
+    transform: translateZ(0); /* Hardware acceleration para remover o engasgo */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timeline-card:hover .timeline-logo {
+    transform: scale(1.15) translateZ(0);
+    opacity: 1;
+    filter: grayscale(0%) brightness(1.3) drop-shadow(0 0 12px var(--item-glow));
+}
+
+/* Borda gradiente no topo do card */
+.timeline-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--item-color-1), var(--item-color-2));
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px var(--item-glow);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Data com cor dinâmica */
+.timeline-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--item-color-1), var(--item-color-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.timeline-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 4px;
+}
+
+.timeline-place {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.timeline-desc {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding: 0 0 40px 50px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 12px;
+        right: auto;
+    }
+}
+
 /* --- SEÇÃO: PROJETOS --- */
 
 .projects-section {
