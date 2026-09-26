@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initAvatarAnimation();
     initContactModal();
     initTimelineGradients();
+    initProjectFilters();
 });
 
 /* --- SEÇÃO: HEADER --- */
@@ -246,5 +247,44 @@ function initTimelineGradients() {
             recalcCount++;
             if (recalcCount >= 10) clearInterval(recalcInterval);
         }, 500);
+    });
+}
+
+/* --- SEÇÃO: FILTROS DE PROJETOS --- */
+function initProjectFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const allProjectsGrid = document.querySelector('#all-projects-grid');
+    if (!filterBtns.length || !allProjectsGrid) return;
+
+    const cards = allProjectsGrid.querySelectorAll('.box');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            cards.forEach(card => {
+                const categories = (card.dataset.category || '').toLowerCase().split(' ');
+                const matches = filter === 'all' || categories.includes(filter);
+
+                if (matches) {
+                    card.style.display = '';
+                    requestAnimationFrame(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = '';
+                    });
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        if (!btn.classList.contains('active') || filter === 'all' || !categories.includes(filter)) {
+                            card.style.display = 'none';
+                        }
+                    }, 200);
+                }
+            });
+        });
     });
 }

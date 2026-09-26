@@ -43,16 +43,18 @@
                 </div>
 
                 <div class="hero-text hidden">
+                    <div class="status-pill">
+                        <span class="status-dot"></span> Disponível para novos projetos
+                    </div>
                     <p class="greeting">Olá, eu me chamo</p>
                     <h1>Andrey <span>:&#41;</span></h1>
                     <p class="subtitle">
-                        <strong>Desenvolvedor Full-Stack</strong> | Analista de QA
+                        <strong>Desenvolvedor Full-Stack</strong> · Analista de QA na <strong>MV</strong>
                     </p>
 
                     <div class="actions">
-                        <a href="assets/docs/CV_Andrey_Silva.pdf" class="btn-cv" download="CV_Andrey_Silva.pdf">Download
-                            CV</a>
-                        <a href="#contato" class="btn-contact" id="openContact">Entrar em contato</a>
+                        <a href="assets/docs/CV_Andrey_Silva.pdf" class="btn-cv" download="CV_Andrey_Silva.pdf"><i class="fas fa-file-arrow-down"></i> Download CV</a>
+                        <a href="#contato" class="btn-contact" id="openContact"><i class="fas fa-paper-plane"></i> Entrar em contato</a>
                     </div>
                 </div>
 
@@ -196,10 +198,41 @@
         <section id="projetos" class="projects-section">
             <div class="container">
                 <h1 class="hidden">Projetos</h1>
+                <p class="section-subtitle hidden" style="margin-bottom: 25px;">Uma seleção de soluções que desenvolvi, unindo código limpo, design e qualidade.</p>
+
+                <!-- Filtros Amigáveis de Projetos -->
+                <div class="project-filters hidden">
+                    <button class="filter-btn active" data-filter="all">Todos <span class="filter-count">8</span></button>
+                    <button class="filter-btn" data-filter="fullstack">Full-Stack & Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile & PWA</button>
+                    <button class="filter-btn" data-filter="landing">Landing Pages</button>
+                    <button class="filter-btn" data-filter="iot">IoT</button>
+                </div>
 
                 <h2 class="hidden titulo-destaque">Destaques</h2>
                 <div class="cards-projects">
-                    <div class="box hidden" data-id="descartecerto">
+                    <div class="box hidden" data-id="anthera" data-category="fullstack mobile">
+                        <span class="card-badge">PWA & SaaS</span>
+                        <div class="cover">
+                            <img src="assets/projects/anthera.jpg" alt="Anthera Profissional">
+                            <div class="details">
+                                <p>Anthera Profissional</p>
+                                <div class="mini-languages">
+                                    <i class="fa-brands fa-react" title="Next.js 16 & React 19"></i>
+                                    <i class="fa-solid fa-wind" title="Tailwind CSS"></i>
+                                    <i class="fa-solid fa-database" title="Supabase (PostgreSQL + RLS)"></i>
+                                    <i class="fa-solid fa-mobile-screen" title="PWA (Progressive Web App)"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>Março de 2026</p>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="box hidden" data-id="descartecerto" data-category="mobile fullstack">
+                        <span class="card-badge">Mobile App</span>
                         <div class="cover">
                             <img src="assets/projects/descartecerto.png" alt="DescarteCerto" onerror="this.src='https://via.placeholder.com/600x400?text=DescarteCerto'">
                             <div class="details">
@@ -215,11 +248,12 @@
                         </div>
                         <div class="description">
                             <p>Junho de 2026</p>
-                            <a href="#">Ver mais</a>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="box hidden" data-id="mypokedex">
+                    <div class="box hidden" data-id="mypokedex" data-category="fullstack">
+                        <span class="card-badge">Web App</span>
                         <div class="cover">
                             <img src="assets/projects/mypokedex.png" alt="My Pokedex">
                             <div class="details">
@@ -234,14 +268,35 @@
                         </div>
                         <div class="description">
                             <p>19 de Abril de 2026</p>
-                            <a href="#">Ver mais</a>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <h2 class="hidden titulo-destaque">Todos os projetos</h2>
-                <div class="cards-projects">
-                    <div class="box hidden" data-id="descartecerto">
+                <div class="cards-projects" id="all-projects-grid">
+                    <div class="box hidden" data-id="anthera" data-category="fullstack mobile">
+                        <span class="card-badge">PWA & SaaS</span>
+                        <div class="cover">
+                            <img src="assets/projects/anthera.jpg" alt="Anthera Profissional">
+                            <div class="details">
+                                <p>Anthera Profissional</p>
+                                <div class="mini-languages">
+                                    <i class="fa-brands fa-react" title="Next.js 16 & React 19"></i>
+                                    <i class="fa-solid fa-wind" title="Tailwind CSS"></i>
+                                    <i class="fa-solid fa-database" title="Supabase"></i>
+                                    <i class="fa-solid fa-mobile-screen" title="PWA"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>Março de 2026</p>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="box hidden" data-id="descartecerto" data-category="mobile fullstack">
+                        <span class="card-badge">Mobile App</span>
                         <div class="cover">
                             <img src="assets/projects/descartecerto.png" alt="DescarteCerto" onerror="this.src='https://via.placeholder.com/600x400?text=DescarteCerto'">
                             <div class="details">
@@ -257,11 +312,12 @@
                         </div>
                         <div class="description">
                             <p>Junho de 2026</p>
-                            <a href="#">Ver mais</a>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="box hidden" data-id="pontoplus">
+                    <div class="box hidden" data-id="pontoplus" data-category="iot fullstack">
+                        <span class="card-badge">IoT & Web</span>
                         <div class="cover">
                             <img src="assets/projects/pontoplus.png" alt="PontoPlus">
                             <div class="details">
@@ -277,11 +333,12 @@
                         </div>
                         <div class="description">
                             <p>9 de Dezembro de 2025</p>
-                            <a href="#">Ver mais</a>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="box hidden" data-id="senkas">
+                    <div class="box hidden" data-id="senkas" data-category="mobile">
+                        <span class="card-badge">Android Nativo</span>
                         <div class="cover">
                             <img src="assets/projects/senkas.png" alt="SENKAS">
                             <div class="details">
@@ -296,11 +353,12 @@
                         </div>
                         <div class="description">
                             <p>18 de Junho de 2025</p>
-                            <a href="#">Ver mais</a>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="box hidden" data-id="landing_pontoplus">
+                    <div class="box hidden" data-id="landing_pontoplus" data-category="landing">
+                        <span class="card-badge">Landing Page</span>
                         <div class="cover">
                             <img src="assets/projects/landing-pontoplus.png" alt="Landing Page PontoPlus">
                             <div class="details">
@@ -314,11 +372,12 @@
                         </div>
                         <div class="description">
                             <p>27 de Novembro de 2025</p>
-                            <a href="#">Ver mais</a>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="box hidden" data-id="dogao_leo">
+                    <div class="box hidden" data-id="dogao_leo" data-category="landing fullstack">
+                        <span class="card-badge">Web & API</span>
                         <div class="cover">
                             <img src="assets/projects/dog-landing-page.png" alt="Dogão do Léo">
                             <div class="details">
@@ -333,11 +392,12 @@
                         </div>
                         <div class="description">
                             <p>25 de Janeiro de 2026</p>
-                            <a href="#">Ver mais</a>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="box hidden" data-id="lumiere_estetica">
+                    <div class="box hidden" data-id="lumiere_estetica" data-category="landing">
+                        <span class="card-badge">Landing Page</span>
                         <div class="cover">
                             <img src="assets/projects/lumiereestetica.png" alt="Lumière Estética">
                             <div class="details">
@@ -352,11 +412,12 @@
                         </div>
                         <div class="description">
                             <p>30 de Março de 2026</p>
-                            <a href="#">Ver mais</a>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="box hidden" data-id="mypokedex">
+                    <div class="box hidden" data-id="mypokedex" data-category="fullstack">
+                        <span class="card-badge">Web App</span>
                         <div class="cover">
                             <img src="assets/projects/mypokedex.png" alt="My Pokedex">
                             <div class="details">
@@ -371,7 +432,7 @@
                         </div>
                         <div class="description">
                             <p>19 de Abril de 2026</p>
-                            <a href="#">Ver mais</a>
+                            <a href="#">Ver mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -456,7 +517,8 @@
                 <div class="project-left-col">
                     <div class="project-video-container hidden-element" id="modal-video-wrapper">
                         <iframe id="modal-project-video" src="" frameborder="0" width="100%" height="100%"
-                            allowfullscreen></iframe>
+                            allowfullscreen class="hidden-element"></iframe>
+                        <img id="modal-project-image" src="" alt="Preview do Projeto" class="hidden-element">
                     </div>
 
                     <div class="project-links">

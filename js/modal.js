@@ -1,6 +1,29 @@
 // DADOS DOS PROJETOS
 
 const myProjects = {
+    "anthera": {
+        title: 'Anthera Profissional — Plataforma & PWA',
+        date: 'Março / 2026',
+        shortDescription: 'Plataforma web progressiva (PWA) e sistema de gestão para distribuidores, com treinamentos, emissão de certificados autenticados via QR Code e painel administrativo completo.',
+        description: 'A <strong>Anthera Profissional</strong> é uma plataforma moderna desenvolvida para capacitar distribuidores e centralizar a gestão da marca de cosméticos profissionais.<br><br>O sistema une a experiência ágil de um aplicativo nativo (PWA instalável) com a robustez de um painel de controle administrativo completo, focado em alta performance, segurança e usabilidade.<br><br><strong>Principais Funcionalidades:</strong><br>• <strong>Portal do Parceiro (PWA):</strong> Cursos interativos com acompanhamento de progresso ("continue de onde parou"), download de materiais técnicos e emissão de certificados em PDF.<br>• <strong>Certificação com QR Code & LinkedIn:</strong> Validação pública antifraude de autenticidade dos certificados emitidos e botão integrado para adicionar a conquista diretamente ao perfil do LinkedIn.<br>• <strong>Painel Administrativo para Gestores:</strong> Dashboards dinâmicos com gráficos de engajamento (Recharts), mural de avisos com validade temporal, catálogo dinâmico de produtos e dossiê de distribuidores.<br>• <strong>Segurança & Arquitetura:</strong> Banco de dados PostgreSQL no Supabase com Row Level Security (RLS) anti-IDOR, autenticação baseada em perfis (RBAC) e headers HTTP de proteção.',
+        videoSrc: '',
+        imageSrc: 'assets/projects/anthera.jpg',
+        technologies: [
+            { icon: 'fa-brands fa-react', title: 'Next.js 16 (App Router) + React 19' },
+            { icon: 'fa-solid fa-wind', title: 'Tailwind CSS v4' },
+            { icon: 'fa-solid fa-database', title: 'Supabase (PostgreSQL + RLS)' },
+            { icon: 'fa-solid fa-mobile-screen', title: 'PWA (Progressive Web App)' },
+            { icon: 'fa-solid fa-qrcode', title: 'Certificação com QR Code' },
+            { icon: 'fa-solid fa-chart-line', title: 'Recharts (Analytics)' }
+        ],
+        site: '', 
+        repository: 'https://github.com/AndreyrbSilva/Anthera-Project',
+        figma: '',
+        notion: '',
+        trello: '',
+        miro: ''
+    },
+
     "descartecerto": {
         title: 'DescarteCerto - Reciclagem Gamificada',
         date: 'Junho / 2026',
@@ -158,6 +181,7 @@ function initProjectModal() {
     const desc = document.getElementById('modal-project-desc');
     const videoWrapper = document.getElementById('modal-video-wrapper');
     const iframe = document.getElementById('modal-project-video');
+    const projectImg = document.getElementById('modal-project-image');
     const techContainer = document.getElementById('modal-tech-container');
     const linkSite = document.getElementById('link-site');
     const linkRepo = document.getElementById('link-repo');
@@ -175,7 +199,8 @@ function initProjectModal() {
         } else {
             modal.classList.remove('active'); 
             document.body.style.overflow = 'auto'; 
-            iframe.src = ''; 
+            if (iframe) iframe.src = ''; 
+            if (projectImg) projectImg.src = '';
         }
     };
 
@@ -205,14 +230,32 @@ function initProjectModal() {
 
                 if (data.videoSrc) {
                     videoWrapper.classList.remove('hidden-element');
-                    let videoUrl = data.videoSrc;
-                    if (videoUrl.includes('streamable.com')) {
-                         videoUrl += '?autoplay=1&loop=0';
+                    if (iframe) {
+                        iframe.classList.remove('hidden-element');
+                        let videoUrl = data.videoSrc;
+                        if (videoUrl.includes('streamable.com')) {
+                             videoUrl += '?autoplay=1&loop=0';
+                        }
+                        iframe.src = videoUrl;
                     }
-                    iframe.src = videoUrl;
+                    if (projectImg) projectImg.classList.add('hidden-element');
+                } else if (data.imageSrc) {
+                    videoWrapper.classList.remove('hidden-element');
+                    if (iframe) {
+                        iframe.classList.add('hidden-element');
+                        iframe.src = '';
+                    }
+                    if (projectImg) {
+                        projectImg.classList.remove('hidden-element');
+                        projectImg.src = data.imageSrc;
+                    }
                 } else {
                     videoWrapper.classList.add('hidden-element');
-                    iframe.src = '';
+                    if (iframe) {
+                        iframe.classList.add('hidden-element');
+                        iframe.src = '';
+                    }
+                    if (projectImg) projectImg.classList.add('hidden-element');
                 }
 
                 checkButton(linkSite, data.site);
